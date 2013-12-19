@@ -2,7 +2,7 @@
 <html>
 <div id="wrapper">
 <head>
-	<header>Where runners come together</header>
+	<header>Where runners come together for project 4</header>
 	<title><?php if(isset($title)) echo $title; ?></title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -22,7 +22,9 @@
                         <div id="navigation">
                         <?php if($user): ?>
                                 <li><a href='/users/profile'>View Profile</a></li>
+                                <li><a href='/users/calculator'>Pace Calculator</a></li>
                                 <li><a href='/posts/add'>Add Post</a></li>
+                                <li><a href='/bibs/add'>Add Bib</a></li>
                                 <li><a href='/posts/'>View Posts</a></li>
                                 <li><a href='/posts/users'>Follow users</a></li>
                                 <li><a href='/users/logout'>Logout</a></li>

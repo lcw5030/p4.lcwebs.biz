@@ -35,10 +35,6 @@ class users_controller extends base_controller
         
     }
 
-    public function calculator(){
-        Router::redirect("/calculator");
-    }
-    
     public function editProfile()
     {
         # don't let other users get to profile...
@@ -329,6 +325,24 @@ class users_controller extends base_controller
         
         # Pass data to the View
         $this->template->content->posts = $posts;
+        
+        #Display the view
+        echo $this->template;
+        
+        
+    }
+
+    public function calculator()
+    {
+        if (!$this->user) {
+            die("Members only. <a href='/users/login'>Login</a>");
+        }
+        
+        #Set up the view
+        $this->template->content = View::instance('v_users_calculator');
+        $this->template->title   = "Calculator";
+        
+
         
         #Display the view
         echo $this->template;

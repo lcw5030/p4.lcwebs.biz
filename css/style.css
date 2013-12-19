@@ -69,7 +69,7 @@
 /*********************************************************************************/
 	#mainContent{
     		padding: 20px;
-		width:1500px;
+		width:1000px;
     		height:auto;
 		background: #FFFFFF;
     		min-height:270px;
@@ -81,6 +81,18 @@
 		border-radius: 15px;
 		padding-bottom: 80px;
 	}
+
+	/* Right column */
+#preview {
+        width:50%;
+        float:right;
+        text-align:center;
+}
+#controls{
+width:50%;
+        float:left;
+        text-align:center;
+}
 
 	body
 	{
@@ -257,6 +269,22 @@
 				{
 					border: 0;
 				}
+
+				#certificate{
+	border: #2e1a12 solid 20px;
+    -webkit-border-image: url(wooden.jpg) 200 stretch;
+    -moz-border-image: url(wooden.jpg) 200 stretch;
+    border-image: url(wooden.jpg) 200 stretch;
+	background-color:#ffffcc;
+	margin:10px;
+	color:#000000;
+	padding:10px;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+	width:50%;
+
+}
 
 
 /*********************************************************************************/

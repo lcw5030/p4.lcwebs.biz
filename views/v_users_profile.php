@@ -1,10 +1,10 @@
 <div id="mainContent">
+<div id="controls">
         <?php if(!$user): ?>
                 <?php Router::redirect("/users/login"); ?>
         <?php else: ?>
                 <h2>This is <?=$user->first_name?>'s profile...</h2>
         <?php endif; ?>
-        <br/>
         <?php if($user) echo $user->first_name;?>
         <?php echo ' '; ?>
         <?php if($user) echo $user->last_name; ?>
@@ -18,7 +18,6 @@
                 echo 'Member since: ';
                 echo date('M d Y', $convert_time);
         ?>
-        <br/>
 
                 <h3>
                         <a href='/users/editProfile' >Edit my profile</a>
@@ -48,4 +47,9 @@
                 <h2>
                         Why not follow someone? <a href='/posts/users'>Other Posters</a>
                 </h2>
+</div>
+<div id="preview">
+test it
+        
+</div>
 </div>

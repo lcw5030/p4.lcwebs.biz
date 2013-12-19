@@ -7,7 +7,7 @@ This file should not be tracked in your Git repo.
 -------------------------------------------------------------------------------------------------*/
 
 # We're on the local environment so toggle IN_PRODUCTION off
-define('IN_PRODUCTION', TRUE);
+define('IN_PRODUCTION', FALSE);
 
 # Always display errors on local environment
 define('DISPLAY_ERRORS', FALSE);
@@ -19,7 +19,7 @@ define('ENABLE_OUTGOING_EMAIL', TRUE);
 define('FAKEMAIL', FALSE);
 
 # Toggle this based on whether you want to connect to your local DB or your live DB
-define('REMOTE_DB', FALSE);
+define('REMOTE_DB', TRUE);
 
 if (REMOTE_DB) {
 	define('DB_HOST', 'localhost');
@@ -29,7 +29,7 @@ if (REMOTE_DB) {
 } else {
 	define('DB_HOST', 'localhost');
 	define('DB_USER', 'root');
-	define('DB_PASS', 'root');	
+	define('DB_PASS', '');	
 }
 
 # If you want to test parts of your app that behave differently based on the time, you can force the time here.

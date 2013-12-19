@@ -31,7 +31,7 @@ A email designated to receive messages from the server. Examples:
 	define('SYSTEM_EMAIL', 'nhrunner22@gmail.com'); 
 
 # Default DB name for this app
-	define('DB_NAME', "lcwebsbi_p4_lcwebs-practice_biz"); 
+	define('DB_NAME', "lcwebsbi_p4_lcwebs_biz"); 
 
 # Timezone
 	define('TIMEZONE', 'America/New_York');
