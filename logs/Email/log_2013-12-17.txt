@@ -1,0 +1,154 @@
+2013-12-17 22:10:43 - INFO --> -------------------------- 
+2013-12-17 22:10:43 - INFO --> Controller/Method: index/index 
+2013-12-17 22:10:43 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:10:43 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:10:43 - INFO --> CC:  
+2013-12-17 22:10:43 - INFO --> BCC:  
+2013-12-17 22:10:43 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:10:43 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:10:44 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:13:19 - INFO --> -------------------------- 
+2013-12-17 22:13:19 - INFO --> Controller/Method: index/index 
+2013-12-17 22:13:19 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:13:19 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:13:19 - INFO --> CC:  
+2013-12-17 22:13:19 - INFO --> BCC:  
+2013-12-17 22:13:19 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:13:19 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:13:20 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:13:38 - INFO --> -------------------------- 
+2013-12-17 22:13:38 - INFO --> Controller/Method: index/index 
+2013-12-17 22:13:38 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:13:38 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:13:38 - INFO --> CC:  
+2013-12-17 22:13:38 - INFO --> BCC:  
+2013-12-17 22:13:38 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:13:38 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:13:39 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:15:15 - INFO --> -------------------------- 
+2013-12-17 22:15:15 - INFO --> Controller/Method: index/index 
+2013-12-17 22:15:15 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:15:15 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:15:15 - INFO --> CC:  
+2013-12-17 22:15:15 - INFO --> BCC:  
+2013-12-17 22:15:15 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:15:15 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:15:16 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:15:17 - INFO --> -------------------------- 
+2013-12-17 22:15:17 - INFO --> Controller/Method: index/index 
+2013-12-17 22:15:17 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:15:17 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:15:17 - INFO --> CC:  
+2013-12-17 22:15:17 - INFO --> BCC:  
+2013-12-17 22:15:17 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:15:17 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:15:18 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:19:13 - INFO --> -------------------------- 
+2013-12-17 22:19:13 - INFO --> Controller/Method: index/index 
+2013-12-17 22:19:13 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:19:13 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:19:13 - INFO --> CC:  
+2013-12-17 22:19:13 - INFO --> BCC:  
+2013-12-17 22:19:13 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:19:13 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:19:14 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:19:20 - INFO --> -------------------------- 
+2013-12-17 22:19:20 - INFO --> Controller/Method: index/index 
+2013-12-17 22:19:20 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:19:20 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:19:20 - INFO --> CC:  
+2013-12-17 22:19:20 - INFO --> BCC:  
+2013-12-17 22:19:20 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:19:20 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:19:21 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:21:13 - INFO --> -------------------------- 
+2013-12-17 22:21:13 - INFO --> Controller/Method: users/login 
+2013-12-17 22:21:13 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:21:13 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:21:13 - INFO --> CC:  
+2013-12-17 22:21:13 - INFO --> BCC:  
+2013-12-17 22:21:13 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:21:13 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> users/login<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:21:14 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:25:19 - INFO --> -------------------------- 
+2013-12-17 22:25:19 - INFO --> Controller/Method: index/index 
+2013-12-17 22:25:19 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:25:19 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:25:19 - INFO --> CC:  
+2013-12-17 22:25:19 - INFO --> BCC:  
+2013-12-17 22:25:19 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:25:19 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> index/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:25:20 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:25:26 - INFO --> -------------------------- 
+2013-12-17 22:25:26 - INFO --> Controller/Method: users/index 
+2013-12-17 22:25:26 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:25:26 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:25:26 - INFO --> CC:  
+2013-12-17 22:25:26 - INFO --> BCC:  
+2013-12-17 22:25:26 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:25:26 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> users/index<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:25:27 - INFO --> FAILED TO SEND EMAIL 
+2013-12-17 22:25:31 - INFO --> -------------------------- 
+2013-12-17 22:25:31 - INFO --> Controller/Method: users/login 
+2013-12-17 22:25:31 - INFO --> From: RunSpot (webmaster@sample-app.com) 
+2013-12-17 22:25:31 - INFO --> To: RunSpot (nhrunner22@gmail.com),  
+2013-12-17 22:25:31 - INFO --> CC:  
+2013-12-17 22:25:31 - INFO --> BCC:  
+2013-12-17 22:25:31 - INFO --> Subject: RunSpot SQL Error 
+2013-12-17 22:25:31 - INFO --> Body: <h2>SQL Error</h2>Access denied for user 'lcwebsbi_lcwebs'@'localhost' (using password: YES)<h2>Query History</h2><h2>Routed Controller/Method:</h2> users/login<br/><h2>Cookies</h2><pre>Array
+(
+    [PHPSESSID] => fpva0fhnn5dbnqlm20bhoh5c61
+    [token] => bdacbf161994d876b0177d6ea784febf02860bd4
+)
+</ 
+2013-12-17 22:25:32 - INFO --> FAILED TO SEND EMAIL 
