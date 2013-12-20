@@ -323,15 +323,39 @@ class users_controller extends base_controller
         # Run the query
         $posts = DB::instance(DB_NAME)->select_rows($q);
         
-        # Pass data to the View
-        $this->template->content->posts = $posts;
         
         #Display the view
         echo $this->template;
         
         
     }
+    
+    public function p_register($race_id)
+    {
+        # Build the query
+        $q = 'SELECT 
+                users.first_name,
+                users.last
+                                FROM users
+                WHERE users.user_id = ' . $this->user->user_id . '
+                ORDER BY users.user_id';
 
+        $data = Array(
+            "first_name" => $user->first_name,
+            "last_name" => $user->last_name,
+            "race_id" => $user->$race_id
+        );
+
+        echo $data;
+     
+        //Insert user into database
+            DB::instance(DB_NAME)->insert_row('races_users', $data);
+
+    #Send user back to the login page
+        Router::redirect('/races/index');
+        
+    }
+    
     public function calculator()
     {
         if (!$this->user) {
@@ -340,7 +364,7 @@ class users_controller extends base_controller
         
         #Set up the view
         $this->template->content = View::instance('v_users_calculator');
-        $this->template->title   = "Calculator";
+        $this->template->title = "Calculator";
         
 
         
@@ -349,8 +373,6 @@ class users_controller extends base_controller
         
         
     }
-    
-    
     
     
 } # end of the class

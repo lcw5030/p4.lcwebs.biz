@@ -88,16 +88,13 @@
                </td>
                <td>
                   <form method='POST' action='/bibs/p_add'>
-                     <input placeholder="hhmmss"type="time" name='fiveKmPrTime' id='content'></input>
-                     <input type='submit' value='New bib'>
-                  </form>
                   <table cellpadding="0" cellspacing="0" id="certificate">
                      <tr>
                         <td colspan="10" align="center">Congratulations on your Personal Records!</td>
                      </tr>
                      <tr>
                         <td width="60">5k: </td>
-                        <td size ="2" name="fiveKmPRTime" id="fiveKmPRTime"/td>
+                        <td size ="2" name="fiveKmPRTime" id="5kPRH" value="$user->fiveKmPRH" /td>
                         <td>:</td>
                         <td size="2" id="5kPRM"/td>
                         <td>:</td>
@@ -132,6 +129,8 @@
                         <td id="marathonRace" style="padding:10px" /td></td>
                      </tr>
                   </table>
+                     <input type='submit' value='New bib'>
+                  </form>
                <td>
                   <table cellpadding="0" cellspacing="0" class="clearPRs">
                      <tr>

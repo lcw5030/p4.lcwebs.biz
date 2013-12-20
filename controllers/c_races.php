@@ -1,5 +1,5 @@
 <?php
-class posts_controller extends base_controller
+class races_controller extends base_controller
 {
     
     public function __construct()
@@ -16,8 +16,8 @@ class posts_controller extends base_controller
     {
         
         # Setup view
-        $this->template->content = View::instance('v_posts_add');
-        $this->template->title   = "New Post";
+        $this->template->content = View::instance('v_races_add');
+        $this->template->title   = "New Race";
         
         # Render template
         echo $this->template;
@@ -30,13 +30,9 @@ class posts_controller extends base_controller
         # Associate this post with this user
         $_POST['user_id'] = $this->user->user_id;
         
-        # Unix timestamp of when this post was created / modified
-        $_POST['created']  = Time::now();
-        $_POST['modified'] = Time::now();
-        
         # Insert
         # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->insert('posts', $_POST);
+        DB::instance(DB_NAME)->insert('races', $_POST);
         
         # Send them back
         Router::redirect("/users/profile");
@@ -47,85 +43,21 @@ class posts_controller extends base_controller
     {
         
         # Set up the View
-        $this->template->content = View::instance('v_posts_index');
-        $this->template->title   = "All Posts";
+        $this->template->content = View::instance('v_races_index');
+        $this->template->title   = "All Race Events";
         
         # Query
-        $q = 'SELECT 
-            posts.content,
-            posts.created,
-            posts.user_id AS post_user_id,
-            users_users.user_id AS follower_id,
-            users.first_name,
-            users.last_name
-        FROM posts
-        INNER JOIN users_users 
-            ON posts.user_id = users_users.user_id_followed
-        INNER JOIN users 
-            ON posts.user_id = users.user_id
-        WHERE users_users.user_id = ' . $this->user->user_id;
+        $q = 'SELECT *
+        FROM races';
         
-        # Run the query, store the results in the variable $posts
-        $posts = DB::instance(DB_NAME)->select_rows($q);
+        # Run the query, store the results in the variable $races
+        $races = DB::instance(DB_NAME)->select_rows($q);
         
         # Pass data to the View
-        $this->template->content->posts = $posts;
+        $this->template->content->races = $races;
         
-        # Build the query for comments
-                $q = "SELECT
-                        comments.comment_id,
-                        comments.created,
-                        comments.modified,
-                        comments.post_id,
-                        comments.user_id,
-                        comments.content,
-                        users.first_name,
-                        users.last_name
-                        FROM comments
-                        JOIN users
-                                ON comments.user_id = users.user_id";
-
-                # Run it
-                $comments = DB::instance(DB_NAME)->select_rows($q);
-
-
-# Build the query to get all the users
-    $q = "SELECT *
-FROM users";
-
-    # Execute the query to get all the users.
-    # Store the result array in the variable $users
-    $pusers = DB::instance(DB_NAME)->select_rows($q);
-
-    # Build the query to figure out what connections does this user already have?
-    # I.e. who are they following
-    $q = "SELECT *
-FROM users_users
-WHERE user_id = ".$this->user->user_id;
-
-    # Execute this query with the select_array method
-    # select_array will return our results in an array and use the "users_id_followed" field as the index.
-    # This will come in handy when we get to the view
-    # Store our results (an array) in the variable $connections
-    $connections = DB::instance(DB_NAME)->select_array($q, 'user_id_followed');
-
-    # Pass data (users and connections) to the view
-    $this->template->content->pusers = $pusers;
-    $this->template->content->connections = $connections;
-                $this->template->content->posts = $posts;
-                $this->template->content->comments = $comments;
-
-                # Render the view
-                echo $this->template;
-        }
-
-        public function deletepost($post_to_delete) {
-                $where_condition = 'WHERE post_id = ' . $post_to_delete;
-
-                DB::instance(DB_NAME)->delete('posts', $where_condition);
-
-         # Send them back
-         Router::redirect("/posts");
+        # Render the View
+        echo $this->template;
         
     }
     
@@ -237,26 +169,4 @@ WHERE user_id = ".$this->user->user_id;
         Router::redirect('/users/profile');
         
     }
-
-    public function p_comment($post_id) {
-
-                # Link this post with this user
-                $_POST['user_id'] = $this->user->user_id;
-
-                # Unix timestamp for created and modified
-                $_POST['created'] = Time::now();
-                $_POST['modified'] = Time::now();
-
-                # Pass in post id
-                $_POST['post_id'] = $post_id;
-
-                # Insert (don't need to sanitize data)
-
-                DB::instance(DB_NAME)->insert('comments', $_POST);
-
-
-                # Redirect back to posts index
-                Router::redirect('/posts');
-
-        }
 }

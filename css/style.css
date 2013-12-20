@@ -82,6 +82,17 @@
 		padding-bottom: 80px;
 	}
 
+#raceEvent{
+border: #2e1a12 solid 5px;
+-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+margin:10px;
+padding:10px;
+font-family:"Courier New", Courier, monospace;
+
+}
+
 	/* Right column */
 #preview {
         width:50%;
