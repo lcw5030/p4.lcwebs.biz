@@ -22,12 +22,11 @@ class users_controller extends base_controller
         );
         
         /*
-        Insert requires 2 params
-        1) The table to insert to
-        2) An array of data to enter where key = field name and value = field data
-        
-        The insert method returns the id of the row that was created
-        */
+Insert requires 2 params
+1) The table to insert to
+2) An array of data to enter where key = field name and value = field data
+The insert method returns the id of the row that was created
+*/
         $user_id = DB::instance(DB_NAME)->insert('users', $data);
         
         echo 'Inserted a new row; resulting id:' . $user_id;
@@ -44,7 +43,7 @@ class users_controller extends base_controller
         
         #Set up the view
         $this->template->content = View::instance('v_users_editProfile');
-        $this->template->title   = "Edit Profile";
+        $this->template->title = "Edit Profile";
         
         # Prepare the data array to be inserted
         $data = Array(
@@ -77,15 +76,15 @@ class users_controller extends base_controller
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
         
         $q = 'SELECT password
-                        FROM users
-                        WHERE user_id = ' . $id;
+FROM users
+WHERE user_id = ' . $id;
         
         $current_password = DB::instance(DB_NAME)->query($q);
         
         # for future use... if I want to allow password to pre-populate or be empty
         if ($_POST['password'] != '') {
             # Encrypt the password (with salt)
-            $_POST['password']         = sha1(PASSWORD_SALT . $_POST['password']);
+            $_POST['password'] = sha1(PASSWORD_SALT . $_POST['password']);
             $_POST['confirm_password'] = sha1(PASSWORD_SALT . $_POST['password']);
         }
         
@@ -93,7 +92,7 @@ class users_controller extends base_controller
         
         # set error & same vars to false
         $error = false;
-        $same  = false;
+        $same = false;
         
         # initiate error
         $this->template->content->error = '<br>';
@@ -102,7 +101,7 @@ class users_controller extends base_controller
         #query for matches on this new email address
         $search_emails = "SELECT user_id FROM users WHERE email = '" . $_POST['email'] . "'";
         #execute the query
-        $count_q       = DB::instance(DB_NAME)->query($search_emails);
+        $count_q = DB::instance(DB_NAME)->query($search_emails);
         #get the number of rows where that email exists
         $email_matches = mysqli_num_rows($count_q);
         
@@ -113,7 +112,7 @@ class users_controller extends base_controller
             #print_r($email_user_id['user_id']);
             #print_r($this->user->user_id);
             
-            # if the user_id is a match,         
+            # if the user_id is a match,
             if ($email_user_id['user_id'] == $this->user->user_id) {
                 
                 #do nothing
@@ -127,7 +126,7 @@ class users_controller extends base_controller
 
         #need to update to not allow for duplicate email
         if ($error == true) {
-            $this->template->content        = View::instance('v_users_p_editProfile');
+            $this->template->content = View::instance('v_users_p_editProfile');
             $this->template->content->error = 'This email address is already in use by another account.';
             
             echo $this->template;
@@ -137,7 +136,7 @@ class users_controller extends base_controller
             # Set the modified time
             $_POST['modified'] = Time::now();
             # be sure to Associate this post with this user
-            $_POST['user_id']  = $this->user->user_id;
+            $_POST['user_id'] = $this->user->user_id;
             
             $where_condition = 'WHERE user_id = ' . $id;
             
@@ -155,7 +154,7 @@ class users_controller extends base_controller
         
         # Setup view
         $this->template->content = View::instance('v_users_signup');
-        $this->template->title   = "Sign Up";
+        $this->template->title = "Sign Up";
         
         //Pass data to the view
         $this->template->content->error = $error;
@@ -168,7 +167,7 @@ class users_controller extends base_controller
     {
         # Setup view
         $this->template->content = View::instance('v_users_photo');
-        $this->template->title   = "Photo";
+        $this->template->title = "Photo";
         
         # Render template
         echo $this->template;
@@ -188,7 +187,7 @@ class users_controller extends base_controller
             }
         }
         
-        //Check to see if the input email already exists in the database 
+        //Check to see if the input email already exists in the database
         $exists = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
         
         //If email already exists
@@ -200,7 +199,7 @@ class users_controller extends base_controller
             
             
             //Store time data
-            $_POST['created']  = Time::now();
+            $_POST['created'] = Time::now();
             $_POST['modified'] = Time::now();
             
             //Encrypt PW
@@ -240,10 +239,10 @@ class users_controller extends base_controller
         
         # Search the db for this email and password
         # Retrieve the token if it's available
-        $q = "SELECT token 
-            FROM users 
-            WHERE email = '" . $_POST['email'] . "' 
-            AND password = '" . $_POST['password'] . "'";
+        $q = "SELECT token
+FROM users
+WHERE email = '" . $_POST['email'] . "'
+AND password = '" . $_POST['password'] . "'";
         
         $token = DB::instance(DB_NAME)->select_field($q);
         
@@ -254,15 +253,15 @@ class users_controller extends base_controller
         
         # But if we did, login succeeded!
         else {
-            /* 
-            Store this token in a cookie using setcookie()
-            Important Note: *Nothing* else can echo to the page before setcookie is called
-            Not even one single white space.
-            param 1 = name of the cookie
-            param 2 = the value of the cookie
-            param 3 = when to expire
-            param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
-            */
+            /*
+Store this token in a cookie using setcookie()
+Important Note: *Nothing* else can echo to the page before setcookie is called
+Not even one single white space.
+param 1 = name of the cookie
+param 2 = the value of the cookie
+param 3 = when to expire
+param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
+*/
             setcookie("token", $token, strtotime('+1 year'), '/');
             
             # Send them to the main page - or whever you want them to go
@@ -309,20 +308,22 @@ class users_controller extends base_controller
         
         #Set up the view
         $this->template->content = View::instance('v_users_profile');
-        $this->template->title   = "Profile";
+        $this->template->title = "Profile";
         
         # Build the query
         $q = 'SELECT
-                posts.content,
-                posts.created,
-                posts.post_id
-                                FROM posts
-                WHERE posts.user_id = ' . $this->user->user_id . '
-                ORDER BY posts.created DESC';
+posts.content,
+posts.created,
+posts.post_id
+FROM posts
+WHERE posts.user_id = ' . $this->user->user_id . '
+ORDER BY posts.created DESC';
         
         # Run the query
         $posts = DB::instance(DB_NAME)->select_rows($q);
         
+        # Pass data to the View
+        $this->template->content->posts = $posts;
         
         #Display the view
         echo $this->template;
@@ -330,43 +331,17 @@ class users_controller extends base_controller
         
     }
     
-    public function p_register($race_id)
-    {
-        # Build the query
-        $q = 'SELECT 
-                users.first_name,
-                users.last
-                                FROM users
-                WHERE users.user_id = ' . $this->user->user_id . '
-                ORDER BY users.user_id';
-
-        $data = Array(
-            "first_name" => $user->first_name,
-            "last_name" => $user->last_name,
-            "race_id" => $user->$race_id
-        );
-
-        echo $data;
-     
-        //Insert user into database
-            DB::instance(DB_NAME)->insert_row('races_users', $data);
-
-    #Send user back to the login page
-        Router::redirect('/races/index');
-        
-    }
+    
+    
     
     public function calculator()
     {
         if (!$this->user) {
             die("Members only. <a href='/users/login'>Login</a>");
         }
-        
         #Set up the view
         $this->template->content = View::instance('v_users_calculator');
-        $this->template->title = "Calculator";
-        
-
+        $this->template->title = "Pace Calculator";
         
         #Display the view
         echo $this->template;

@@ -1,17 +1,9 @@
 
 
-<!DOCTYPE html>
 
-<html>
 <div>
-   <head>
-      <link rel="stylesheet" href="main.css" type="text/css">
-      <link rel="stylesheet" href="features.css" type="text/css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-   </head>
    <body>
-      <form name="Calc">
+      <form name="Calc" method='POST' action='/bibs/p_add'>
          <table border="0" cellpadding="1" cellspacing="0">
             <tr>
                <!-- bgcolor on next line = Border Color -->
@@ -72,6 +64,7 @@
                         <td bgcolor="white" colspan="3" align="center">
                            <input type="button" value="Calculate" onClick="calcIT()">
                            <input type="button" value="Clear" onClick="clearNums()">
+                           <input type='submit' value='Add Bib'>
                         </td>
                      </tr>
                      <tr>
@@ -87,18 +80,18 @@
                   <!-- End embedded table -->
                </td>
                <td>
-                  <form method='POST' action='/bibs/p_add'>
+
                   <table cellpadding="0" cellspacing="0" id="certificate">
                      <tr>
                         <td colspan="10" align="center">Congratulations on your Personal Records!</td>
                      </tr>
                      <tr>
                         <td width="60">5k: </td>
-                        <td size ="2" name="fiveKmPRTime" id="5kPRH" value="$user->fiveKmPRH" /td>
+                        <td size ="2" name="fiveKmPRH" id="5kPRH"/td>
                         <td>:</td>
-                        <td size="2" id="5kPRM"/td>
+                        <td size="2" name="fiveKmPRH" id="5kPRM"/td>
                         <td>:</td>
-                        <td size="2" id="5kPRS"/td>
+                        <td size="2" name="fiveKmPRH" id="5kPRS"/td>
                         <td size="2" style="padding:10px" id="5kRace" td></td>
                      </tr>
                      <tr>
@@ -129,8 +122,7 @@
                         <td id="marathonRace" style="padding:10px" /td></td>
                      </tr>
                   </table>
-                     <input type='submit' value='New bib'>
-                  </form>
+
                <td>
                   <table cellpadding="0" cellspacing="0" class="clearPRs">
                      <tr>
@@ -170,9 +162,4 @@
       <script language="JavaScript" src="/javascript/pacecalc_orig_api.js"></script>
       <script language="JavaScript" src="/javascript/pacecalc_functionality.js"></script>
    </body>
-   <div>
-      <a href='/views/about.php'>About this Pace Calculator</a>
-   </div>
 </div>
-</html>
-
