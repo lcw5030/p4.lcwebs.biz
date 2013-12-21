@@ -17,7 +17,7 @@ var METERS_IN_MILE = 1609.344;
 Page load functionality
 -------------------------------------------------------------------------------------------------*/
 $(document).ready(function () {
-    $('input[type!="button"][type!="submit"], select, textarea')
+    $('select')
         .val('')
         .blur();
     var zero = 0;
@@ -348,6 +348,7 @@ function saveMyTime() {
     if ($('#raceName').val() != "" && $('#raceMonth').val() != "" && $('#raceDay').val() != "" && $('#raceYear').val() != "") {
         if (newPR == true) {
             PRRaceInfo.html(raceInfo);
+            PRRaceInfo.val(raceInfo);
             PRTimeH.html(hours);
             PRTimeH.val(hours);
             PRTimeM.html(minutes);

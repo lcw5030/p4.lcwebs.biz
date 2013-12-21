@@ -4,6 +4,7 @@
 <div>
    <body>
       <form name="Calc" method='POST' action='/bibs/p_add'>
+         <input type='submit' value='New Race Event' onClick="disableSome()">
          <table border="0" cellpadding="1" cellspacing="0">
             <tr>
                <!-- bgcolor on next line = Border Color -->
@@ -64,7 +65,7 @@
                         <td bgcolor="white" colspan="3" align="center">
                            <input type="button" value="Calculate" onClick="calcIT()">
                            <input type="button" value="Clear" onClick="clearNums()">
-                           <input type='submit' value='Add Bib'>
+
                         </td>
                      </tr>
                      <tr>
@@ -80,73 +81,114 @@
                   <!-- End embedded table -->
                </td>
                <td>
-
+<?php foreach($bibs as $bib): ?>
+   <article>
                   <table cellpadding="0" cellspacing="0" id="certificate">
                      <tr>
                         <td colspan="10" align="center">Congratulations on your Personal Records!</td>
                      </tr>
                      <tr>
                         <td width="60">5k: </td>
-                        <td size ="2" name="fiveKmPRH" id="5kPRH"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size ="2" name="5kPRH" id="5kPRH" value='<?=$bib['5kPRH']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" name="fiveKmPRH" id="5kPRM"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size="2" name="5kPRM" id="5kPRM" value='<?=$bib['5kPRM']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" name="fiveKmPRH" id="5kPRS"/td>
-                        <td size="2" style="padding:10px" id="5kRace" td></td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size="2" name="5kPRS" id="5kPRS" value='<?=$bib['5kPRS']; ?>'/input>
+                     </td>
+                     <td>
+                     <input disabled="disabled" class="certificateData" style="padding:10px" name="5kRaceDetails" id="5kRace" value='<?=$bib['5kRaceDetails']; ?>' /input>
+                  </td>
                      </tr>
                      <tr>
                         <td width="60">10k: </td>
-                        <td size ="2"id="10kPRH"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size ="2" name="10kPRH" id="10kPRH" value='<?=$bib['10kPRH']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" id="10kPRM"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData"td size="2" name="10kPRM" id="10kPRM" value='<?=$bib['10kPRM']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" id="10kPRS"/td>
-                        <td style="padding:10px" id="10kRace" /td></td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size="2" name="10kPRS" id="10kPRS" value='<?=$bib['10kPRS']; ?>'/input>
+                     </td>
+                     <td>
+                     <input disabled="disabled" class="certificateData" style="padding:10px" name="10kRaceDetails" id="10kRace" value='<?=$bib['10kRaceDetails']; ?>' /input>
+                  </td>
                      </tr>
                      <tr>
                         <td width="60">Half Marathon: </td>
-                        <td size ="2"id="halfMarathonPRH"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size ="2" name="halfMarathonPRH" id="halfMarathonPRH" value='<?=$bib['halfMarathonPRH']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" id="halfMarathonPRM"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size="2" name="halfMarathonPRM" id="halfMarathonPRM" value='<?=$bib['halfMarathonPRM']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" id="halfMarathonPRS"/td>
-                        <td id="halfMarathonRace" style="padding:10px" /td></td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size="2" name="halfMarathonPRS" id="halfMarathonPRS" value='<?=$bib['halfMarathonPRS']; ?>'/input>
+                     </td>
+                     <td>
+                     <input disabled="disabled" class="certificateData" style="padding:10px" name="halfMarathonRaceDetails" id="halfMarathonRace" value='<?=$bib['halfMarathonRaceDetails']; ?>' /input>
+                  </td>
                      </tr>
                      <tr>
                         <td width="60">Marathon: </td>
-                        <td size ="2"id="marathonPRH"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size ="2" name="marathonPRH" id="marathonPRH" value='<?=$bib['marathonPRH']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" id="marathonPRM"/td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size="2" name="marathonPRM" id="marathonPRM" value='<?=$bib['marathonPRM']; ?>'/input>
+                     </td>
                         <td>:</td>
-                        <td size="2" id="marathonPRS"/td>
-                        <td id="marathonRace" style="padding:10px" /td></td>
+                        <td>
+                        <input disabled="disabled" class="certificateData" size="2" name="marathonPRS" id="marathonPRS" value='<?=$bib['marathonPRS']; ?>'/input>
+                     </td>
+                     <td>
+                     <input disabled="disabled" class="certificateData" style="padding:10px" name="marathonRaceDetails" id="marathonRace" value='<?=$bib['marathonRaceDetails']; ?>' /input>
+                  </td>
                      </tr>
                   </table>
+</article>
+              <?php endforeach; ?>
 
+              <?php foreach($bibs as $bib): ?>
+<article>
                <td>
-                  <table cellpadding="0" cellspacing="0" class="clearPRs">
+                  <table cellpadding="0" cellspacing="0" class="clearPRs" style="padding:100px">
                      <tr>
                         <td>
-                           <input type="button" value="Clear 5k PR" onClick="clear5kPR()" class="clearPRButton">
+                           <a href='/bibs/p_delete_5k/<?=$bib['bib_id']; ?>' class="clearPRButton">Clear 5k PR</a>
                         </td>
                      </tr>
                      <tr>
                         <td>
-                           <input type="button" value="Clear 10k PR" onClick="clear10kPR()" class="clearPRButton">
+                           <a href='/bibs/p_delete_10k/<?=$bib['bib_id']; ?>' class="clearPRButton">Clear 10k PR</a>
                         </td>
                      </tr>
                      <tr>
                         <td>
-                           <input type="button" value="Clear 1/2 Marathon PR" onClick="clearHalfMarathonPR()" class="clearPRButton">
+                           <a href='/bibs/p_delete_halfMarathon/<?=$bib['bib_id']; ?>' class="clearPRButton">Clear half Marathon PR</a>
                         </td>
                      </tr>
                      <tr>
                         <td>
-                           <input type="button" value="Clear Marathon PR" onClick="clearMarathonPR()" class="clearPRButton">
+                           <a href='/bibs/p_delete_marathon/<?=$bib['bib_id']; ?>' class="clearPRButton">Clear marathon PR</a>
                         </td>
                      </tr>
                   </table>
                </td>
+
+               </article>
+
+<?php endforeach; ?>
                </td>
             </tr>
             <tr>

@@ -324,6 +324,36 @@ ORDER BY posts.created DESC';
         
         # Pass data to the View
         $this->template->content->posts = $posts;
+
+
+# Build the query
+        $q = 'SELECT
+bibs.5kPRH,
+bibs.5kPRM,
+bibs.5kPRS,
+bibs.5kRaceDetails,
+bibs.10kPRH,
+bibs.10kPRM,
+bibs.10kPRS,
+bibs.10kRaceDetails,
+bibs.halfMarathonPRH,
+bibs.halfMarathonPRM,
+bibs.halfMarathonPRS,
+bibs.halfMarathonRaceDetails,
+bibs.marathonPRH,
+bibs.marathonPRM,
+bibs.marathonPRS,
+bibs.marathonRaceDetails,
+bibs.bib_id,
+bibs.user_id
+FROM bibs
+WHERE bibs.user_id = ' . $this->user->user_id . '
+ORDER BY bibs.5kPRH DESC';
+        
+        # Run the query
+        $bibs = DB::instance(DB_NAME)->select_rows($q);
+        # Pass data to the View
+        $this->template->content->bibs = $bibs;
         
         #Display the view
         echo $this->template;
@@ -343,6 +373,35 @@ ORDER BY posts.created DESC';
         $this->template->content = View::instance('v_users_calculator');
         $this->template->title = "Pace Calculator";
         
+        # Build the query
+        $q = 'SELECT
+bibs.5kPRH,
+bibs.5kPRM,
+bibs.5kPRS,
+bibs.5kRaceDetails,
+bibs.10kPRH,
+bibs.10kPRM,
+bibs.10kPRS,
+bibs.10kRaceDetails,
+bibs.halfMarathonPRH,
+bibs.halfMarathonPRM,
+bibs.halfMarathonPRS,
+bibs.halfMarathonRaceDetails,
+bibs.marathonPRH,
+bibs.marathonPRM,
+bibs.marathonPRS,
+bibs.marathonRaceDetails,
+bibs.bib_id,
+bibs.user_id
+FROM bibs
+WHERE bibs.user_id = ' . $this->user->user_id . '
+ORDER BY bibs.5kPRH DESC';
+        
+        # Run the query
+        $bibs = DB::instance(DB_NAME)->select_rows($q);
+        # Pass data to the View
+        $this->template->content->bibs = $bibs;
+
         #Display the view
         echo $this->template;
         
@@ -351,3 +410,4 @@ ORDER BY posts.created DESC';
     
     
 } # end of the class
+?>
