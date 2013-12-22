@@ -1,3 +1,4 @@
+<body>
 <div id="mainContent">
     <form method='POST' action='/users/p_signup'>
 
@@ -10,15 +11,18 @@
         <br><br>
 
         Email<br>
-        <input type='text' name='email'>
+        <input type='text' name='email' id="email">
         <br><br>
+
+        <div id="emailTest">
+        </div>
 
         Password<br>
         <input type='password' name='password'>
         <br><br>
 
         <?php if(isset($error) && $error == 'error'): ?>
-            <div class='error'>
+            <div class='error' id='error'>
                 Signup Failed. All fields are required.
             </div>
             
@@ -36,4 +40,7 @@
 
         <input type='submit' value='Sign up'>
     </form>
+    <script language="JavaScript" src="/js/signUpValidation.js"></script>
+    <script language="JavaScript" src="/javascript/pacecalc_functionality.js"></script>
+</body>
 </div>

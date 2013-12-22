@@ -84,6 +84,7 @@ padding:0;
 		-moz-border-radius: 15px;
 		border-radius: 15px;
 		padding-bottom: 80px;
+		overflow:auto;
 	}
 
 #raceEvent{
@@ -146,8 +147,7 @@ width:50%;
 background:rgba(0,0,0,0);
     border:none;
     color:#000000;
-    padding:0;
-    margin:0;
+    display: inline-block;
 	}
 	
 	li{
@@ -305,7 +305,7 @@ background:rgba(0,0,0,0);
 	-moz-box-shadow: 10px 10px 5px #888;
 	-webkit-box-shadow: 10px 10px 5px #888;
 	box-shadow: 10px 10px 5px #888;
-	width:120%;
+
 
 }
 

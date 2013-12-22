@@ -101,7 +101,7 @@
                         <input disabled="disabled" class="certificateData" size="2" name="5kPRS" id="5kPRS" value='<?=$bib['5kPRS']; ?>'/input>
                      </td>
                      <td>
-                     <input disabled="disabled" class="certificateData" style="padding:10px" name="5kRaceDetails" id="5kRace" value='<?=$bib['5kRaceDetails']; ?>' /input>
+                     <input disabled="disabled" size="50" class="certificateData" style="padding:10px" name="5kRaceDetails" id="5kRace" value='<?=$bib['5kRaceDetails']; ?>' /input>
                   </td>
                      </tr>
                      <tr>
@@ -118,7 +118,7 @@
                         <input disabled="disabled" class="certificateData" size="2" name="10kPRS" id="10kPRS" value='<?=$bib['10kPRS']; ?>'/input>
                      </td>
                      <td>
-                     <input disabled="disabled" class="certificateData" style="padding:10px" name="10kRaceDetails" id="10kRace" value='<?=$bib['10kRaceDetails']; ?>' /input>
+                     <input disabled="disabled" size="50" class="certificateData" style="padding:10px" name="10kRaceDetails" id="10kRace" value='<?=$bib['10kRaceDetails']; ?>' /input>
                   </td>
                      </tr>
                      <tr>
@@ -135,7 +135,7 @@
                         <input disabled="disabled" class="certificateData" size="2" name="halfMarathonPRS" id="halfMarathonPRS" value='<?=$bib['halfMarathonPRS']; ?>'/input>
                      </td>
                      <td>
-                     <input disabled="disabled" class="certificateData" style="padding:10px" name="halfMarathonRaceDetails" id="halfMarathonRace" value='<?=$bib['halfMarathonRaceDetails']; ?>' /input>
+                     <input disabled="disabled" size="50" class="certificateData" style="padding:10px" name="halfMarathonRaceDetails" id="halfMarathonRace" value='<?=$bib['halfMarathonRaceDetails']; ?>' /input>
                   </td>
                      </tr>
                      <tr>
@@ -152,7 +152,7 @@
                         <input disabled="disabled" class="certificateData" size="2" name="marathonPRS" id="marathonPRS" value='<?=$bib['marathonPRS']; ?>'/input>
                      </td>
                      <td>
-                     <input disabled="disabled" class="certificateData" style="padding:10px" name="marathonRaceDetails" id="marathonRace" value='<?=$bib['marathonRaceDetails']; ?>' /input>
+                     <input disabled="disabled" style="padding:10px" size="50" class="certificateData" name="marathonRaceDetails" id="marathonRace" value='<?=$bib['marathonRaceDetails']; ?>' /input>
                   </td>
                      </tr>
                   </table>
