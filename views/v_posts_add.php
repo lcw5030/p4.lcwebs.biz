@@ -7,6 +7,12 @@
     	<br><br>
     	<input type='submit' value='New post'>
 
+    	<?php if(isset($error) && $error == 'error'): ?>
+            <div class='error' id='error'>
+                Cannot add an empty post.
+            </div>
+        <?php endif; ?>
+
 	</form> 
 </div>
 

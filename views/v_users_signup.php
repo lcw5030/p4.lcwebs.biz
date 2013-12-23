@@ -14,9 +14,6 @@
         <input type='text' name='email' id="email">
         <br><br>
 
-        <div id="emailTest">
-        </div>
-
         Password<br>
         <input type='password' name='password'>
         <br><br>
@@ -25,8 +22,12 @@
             <div class='error' id='error'>
                 Signup Failed. All fields are required.
             </div>
-            
+        <?php endif; ?>
 
+        <?php if(isset($error) && $error == 'bademail'): ?>
+            <div class='error' id='error'>
+                Invalid email address.
+            </div>
         <?php endif; ?>
 
         <?php if(isset($error) && $error == 'exists'): ?>
@@ -40,7 +41,5 @@
 
         <input type='submit' value='Sign up'>
     </form>
-    <script language="JavaScript" src="/js/signUpValidation.js"></script>
-    <script language="JavaScript" src="/javascript/pacecalc_functionality.js"></script>
 </body>
 </div>

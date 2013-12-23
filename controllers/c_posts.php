@@ -12,12 +12,15 @@ class posts_controller extends base_controller
         }
     }
     
-    public function add()
+    public function add($error = NULL)
     {
         
         # Setup view
         $this->template->content = View::instance('v_posts_add');
         $this->template->title = "New Post";
+        
+        //Pass data to the view
+        $this->template->content->error = $error;
         
         # Render template
         echo $this->template;
@@ -26,7 +29,14 @@ class posts_controller extends base_controller
     
     public function p_add()
     {
-        
+        //Check input for blank fields
+        foreach ($_POST as $field => $value) {
+            if (empty($value)) {
+                //If any fields are blank, send error message
+                Router::redirect('/posts/add/error');
+            }
+        }
+
         # Associate this post with this user
         $_POST['user_id'] = $this->user->user_id;
         

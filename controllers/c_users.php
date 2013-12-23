@@ -38,7 +38,7 @@ The insert method returns the id of the row that was created
     {
         # don't let other users get to profile...
         if (!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
+            die("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Please Login</title></head><body>Please login to use this website<a href='/users/login'>Login</a></body></html>");
         }
         
         #Set up the view
@@ -66,7 +66,7 @@ The insert method returns the id of the row that was created
     {
         # this user, not others...and must be logged in, too!
         if (!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
+            die("<!DOCTYPE html><html><head><title>Please Login</title><meta charset='UTF-8'></head><body>Please login to use this website<a href='/users/login'>Login</a></body></html>");
         }
         
         # Set up the View
@@ -186,6 +186,10 @@ WHERE user_id = ' . $id;
                 Router::redirect('/users/signup/error');
             }
         }
+
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        Router::redirect('/users/signup/bademail');
+        }
         
         //Check to see if the input email already exists in the database
         $exists = DB::instance(DB_NAME)->select_field("SELECT email FROM users WHERE email = '" . $_POST['email'] . "'");
@@ -209,7 +213,32 @@ WHERE user_id = ' . $id;
             $_POST['token'] = sha1(TOKEN_SALT . $_POST['email'] . Utils::generate_random_string());
             
             //Insert user into database
-            DB::instance(DB_NAME)->insert_row('users', $_POST);
+            $user_id = DB::instance(DB_NAME)->insert_row('users', $_POST);
+
+            # Update their row in the DB with the new token
+        $q = Array(
+            "user_id" => $user_id,
+            "5kPRH" => '',
+            "5kPRM" => '',
+            "5kPRS" => '',
+            "5kRaceDetails" => '',
+            "10kPRH" => '',
+            "10kPRM" => '',
+            "10kPRS" => '',
+            "10kRaceDetails" => '',
+            "halfMarathonPRH" => '',
+            "halfMarathonPRM" => '',
+            "halfMarathonPRS" => '',
+            "halfMarathonRaceDetails" => '',
+            "marathonPRH" => '',
+            "marathonPRM" => '',
+            "marathonPRS" => '',
+            "marathonRaceDetails" => ''
+
+        );
+        
+        DB::instance(DB_NAME)->insert('bibs', $q);
+                # Render template
             
             //redirect to login
             Router::redirect('/users/login');
@@ -303,7 +332,7 @@ param 4 = the path of the cooke (a single forward slash sets it for the entire d
     public function profile()
     {
         if (!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
+            die("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Please Login</title></head><body>Please login to use this website<a href='/users/login'>Login</a></body></html>");
         }
         
         #Set up the view
@@ -367,7 +396,7 @@ ORDER BY bibs.5kPRH DESC';
     public function calculator()
     {
         if (!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
+            die("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Please Login</title></head><body>Please login to use this website<a href='/users/login'>Login</a></body></html>");
         }
         #Set up the view
         $this->template->content = View::instance('v_users_calculator');

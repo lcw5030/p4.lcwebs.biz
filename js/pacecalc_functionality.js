@@ -21,13 +21,12 @@ $(document).ready(function () {
         .val('')
         .blur();
     var zero = 0;
-
     $('.timeValue').val("0" + 0);
    if ($('.certificateData').val() == undefined){
     $('.certificateData').val("");
    }
    if ($('.certificateData').val() == undefined){
-    $('.certificateData').html("00");
+    $('.certificateData').html("");
    }
    $('.certificateData').attr('readonly', 'readonly');
     disableTime();
@@ -384,10 +383,6 @@ function saveMyTime() {
 
             $('#calcErrorHandling').css('color', 'blue');
             $('#calcErrorHandling').html("Congratulations on a great " + distance + " Personal Record!");
-
-            if($('.certificateData').val() == 0){
-                $('.certificateData').html("00");
-            }
 
         } else if(newPR == "equal") {
             if($('.timeValue').val("")){

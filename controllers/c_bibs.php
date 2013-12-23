@@ -39,13 +39,11 @@ class bibs_controller extends base_controller {
 
         # Insert
         # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->update_or_insert_row('bibs', $_POST);
+        DB::instance(DB_NAME)->update('bibs', $_POST, 'WHERE user_id =' . $this->user->user_id);
 
         # Quick and dirty feedback
-        echo "Your bib has been added. <a href='/bibs/add'>Add another</a>";
+        echo "Your bib has been added. <a href='/users/calculator'>Update PRs</a>";
 
-        # Send them back
-        Router::redirect("/users/calculator");
 
     }
 

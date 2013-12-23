@@ -15,7 +15,6 @@
 
 <form class="form_comment" method='POST' action='/users/p_register/<?=$race['race_id']?>'>
 <br>
-<input type='submit' value='Register'><br><br>
 </form> 
 
 	</article>
